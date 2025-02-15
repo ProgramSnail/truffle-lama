@@ -45,7 +45,9 @@ open module org.graalvm.sl.test {
   requires junit;
   requires org.graalvm.truffle;
   requires org.graalvm.sl;
-  exports com.oracle.truffle.sl.test;
+    requires truffle.tck;
+    requires hamcrest.core;
+    exports com.oracle.truffle.sl.test;
   
   provides com.oracle.truffle.api.provider.TruffleLanguageProvider 
       with com.oracle.truffle.sl.test.SLParseInContextTestEvalLangProvider;

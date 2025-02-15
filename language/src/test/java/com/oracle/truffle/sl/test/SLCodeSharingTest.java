@@ -63,6 +63,7 @@ public class SLCodeSharingTest {
 
     @Test
     public void testFibSharing() throws Exception {
+        System.setProperty("polyglot.engine.WarnInterpreterOnly", "false");
         Source fib = createFib();
         try (Engine engine = Engine.create()) {
             try (Context context = Context.newBuilder().engine(engine).build()) {

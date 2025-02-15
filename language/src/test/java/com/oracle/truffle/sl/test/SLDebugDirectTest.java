@@ -94,6 +94,7 @@ public class SLDebugDirectTest {
 
     @Before
     public void before() {
+        System.setProperty("polyglot.engine.WarnInterpreterOnly", "false");
         suspendedEvent = null;
         engine = Engine.newBuilder().out(out).err(err).build();
         debugger = engine.getInstruments().get("debugger").lookup(Debugger.class);

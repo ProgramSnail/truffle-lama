@@ -88,6 +88,7 @@ public class PassItselfBackViaContextTest {
 
     @Before
     public void prepareSystem() {
+        System.setProperty("polyglot.engine.WarnInterpreterOnly", "false");
         myObj = new MyObj();
         context = Context.newBuilder().allowPolyglotAccess(PolyglotAccess.ALL).build();
         context.getPolyglotBindings().putMember("myObj", myObj);
